@@ -1,0 +1,166 @@
+.img {
+  height: 30%;
+  position: absolute;
+  transition: 0.2s ease-in-out;
+  z-index: 1;
+}
+
+/* ----------------------------card2-------------------------------*/
+/* From Uiverse.io by ElSombrero2 */
+.card {
+  overflow: visible;
+  width: 250px;
+  height: 270px;
+  border-radius: 18px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 38.6px rgba(0, 0,0,0.29);;
+  border-radius: 18px;
+}
+
+.front,
+.back {
+  /* background-color: #151515; */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.back-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+}
+
+.front {
+  transform: rotateY(180deg);
+  color: white;
+}
+
+.front .front-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 18px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.go-to-link {
+  font-size: 10px;
+  color: #9b51e0; /* Purple color */
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.go-to-link span {
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.bookmark-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #9b51e0; /* Purple fill for the bookmark icon */
+}
+
+.top {
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 0px 5px;
+  /* background-color: #4c385e; */
+  font-size: 3px;
+  border-left: 2px solid #a37eff;
+}
+.toptext h5 {
+  color: #5c5c5c;
+  /* text-align: center; */
+  font-family: Outfit;
+  font-size: 12px;
+  font-weight: 500;
+}
+.toptext h3 {
+  color: #a37eff;
+  /* text-align: center; */
+  font-family: Outfit;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: -10px;
+}
+
+.mid {
+  margin: 0px 20px;
+  /* background-color: #9b51e0; */
+  height: 160px;
+  color: #000;
+  font-size: 7px;
+}
+.mid p {
+  color: #000;
+  font-family: Outfit;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.btom {
+  /* background-color: #9b51e0; */
+  width: 80%;
+  margin: 0px 10%;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

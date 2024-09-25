@@ -1,0 +1,530 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+}
+
+.header nav {
+  width: 100%;
+  /* position: fixed; */
+  top: 0%;
+  left: 0%;
+  padding: 0px 2%;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  justify-content: space-between;
+  transition: background 1s, padding 0.5s;
+}
+/* .menubar.active {
+  background-color: black;
+  padding: 5px 6%;
+} */
+
+/* nav h1 {
+  padding-top: 5px;
+  width: 200px;
+  color: white;
+} */
+/* .menubar.active h1 {
+  color: aqua;
+} */
+#logoimg {
+  padding: 15px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin-right: 10px;
+}
+
+nav ul li {
+  position: relative;
+  padding: 0px 5px;
+}
+/* Style for the nav links */
+nav ul li a {
+  display: block;
+  font-size: 14px;
+  font-family: Outfit;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 6px 0;
+  margin: 0 15px;
+  margin-top: 20px;
+  width: max-content;
+  position: relative;
+}
+
+/* Create an animated underline effect starting from the center */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #d3a1ff; /* Underline color */
+  left: 50%; /* Start from the center */
+  bottom: 0;
+  transform: translateX(-50%); /* Move the underline to the exact center */
+  transition: width 0.3s ease-in-out;
+  border-radius: 20px;
+}
+
+/* On hover, expand the underline outward from the center */
+nav ul li a:hover::after,
+nav ul li.active a::after {
+  width: 100%; /* Full width */
+  left: 50%; /* Keep it centered */
+  transform: translateX(-50%); /* Stay centered as it expands */
+}
+
+/* Change text color on hover */
+nav ul li a:hover,
+nav ul li.active a {
+  color: #9000ff;
+  border-radius: 20px;
+}
+
+/* Active state */
+nav ul li.active a {
+  color: #9000ff; /* Text color for active state */
+  border-radius: 20px;
+}
+
+/* Ensure underline is visible for active state */
+nav ul li.active a::after {
+  width: 100%; /* Full width */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav ul li.active a i,
+nav ul li a:active i {
+  color: #9000ff; /* Icon color for active state */
+}
+
+/* Style for the navicon */
+.navicon {
+  display: none; /* Hide by default */
+  position: absolute;
+  margin: auto;
+  right: 5px;
+  top: 5px;
+}
+.navicon {
+  display: none;
+  /* font-size: 200px; */
+  position: absolute;
+  margin: auto;
+  right: 5px;
+  top: 5px;
+}
+
+.mobilemenu {
+  margin-left: 0%;
+}
+
+/* side icon */
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: 0.3s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: translateY(14px) rotate(60deg);
+  margin-left: 0;
+  transform-origin: right;
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  transform: translateY(28px) rotate(-60deg);
+  transition-duration: 0.3s;
+  transform-origin: left;
+  z-index: 1;
+}
+
+#checkbox:checked + .toggle {
+  transform: rotate(-90deg);
+}
+/* Wrap this around the toggle button to control its size */
+.navicon {
+  transform: scale(
+    0.4
+  ); /* Adjust this value to scale the icon (e.g., 0.8 for 80% of the original size) */
+  transform-origin: center;
+}
+/* -------------Land_Part---------------- */
+.land_part {
+  height: 100vh;
+  width: 100vw;
+  /* border: 5px solid blue; */
+  display: flex;
+  place-items: center;
+}
+
+.mainland {
+  /* border: 5px solid rgb(203, 203, 250); */
+  /* margin: 150px 0px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  width: 95vw;
+  padding-left: 10vw;
+}
+.responsive-image {
+  /* background-color: aqua; */
+  width: 80vw;
+  margin-top: -10px;
+}
+.responsive-image1 {
+  display: none;
+  height: 50vh;
+  margin-top: -100px;
+  /* width: 90vw; */
+}
+
+.sideimg {
+  z-index: -100;
+  position: absolute;
+}
+.slideimgsmall {
+  display: none;
+}
+/*----------Our Service part-------*/
+.ourserviceheading,
+.ourclientsheading {
+  color: #000;
+  font-family: Outfit;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-bottom: 95px;
+}
+#ourservice {
+  padding: 0px 5px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border: 5px solid red; */
+}
+
+.ourservice-left-col {
+  flex-basis: 50%;
+  /* border: 5px solid red; */
+}
+.ourservice-left-col img {
+  width: 70%;
+  margin-left: 25%;
+}
+
+.ourservice-right-col {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 700px;
+  /* border: 5px solid rgb(17, 0, 255); */
+}
+.ourservice-text {
+  border: 2px dashed rgb(0, 0, 0);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 450px;
+  display: inline-block;
+  text-align: left;
+}
+.head_os {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.head_os img {
+  width: 22px;
+  height: 22px;
+}
+.head_os h1 {
+  margin-top: -5px;
+}
+.ourservice-text p,
+.new-ourservice-text p {
+  font-weight: 500;
+}
+.ourservice-right-col h1 {
+  text-align: left;
+  color: #a37eff;
+  font-family: Outfit;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.ourservice-left-col h1 {
+  text-align: left;
+  color: #a37eff;
+  font-family: Outfit;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+/* .about-right-col {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 700px;
+} */
+/* New section styling */
+#new-ourservice {
+  padding: 0px 5px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.new-ourservice-left-col {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.new-ourservice-text {
+  border: 2px dashed rgb(0, 0, 0);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 450px;
+  display: inline-block;
+  text-align: left;
+}
+
+.new-head_os {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.new-head_os img {
+  width: 22px;
+  height: 22px;
+}
+
+.new-head_os h1 {
+  margin-top: -5px;
+}
+
+.new-ourservice-right-col {
+  flex-basis: 50%;
+}
+
+.new-ourservice-right-col img {
+  width: 70%;
+  margin-right: 25%;
+}
+
+.new-ourservice-left-col h1 {
+  text-align: left;
+  color: #a37eff;
+  font-family: Outfit;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* ------------------------------About Us Part----------------------- */
+.aboutusheading {
+  margin-top: 100px;
+}
+
+#about-us {
+  width: 100vw;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+#about-us h1 {
+  margin-top: 100px;
+  color: #000;
+  font-family: Outfit;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-bottom: 50px;
+}
+
+#about-us p {
+  width: 73vw;
+  height: max-content;
+  /* color: #000000; */
+  text-align: center;
+  font-family: Outfit;
+  /* font-family: Numans; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* ----------------------------Our Clients part---------------------------- */
+/* .ourclientsheading{
+  this part done in line no 210 our service statting
+} */
+
+#our_clints {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5vw;
+  /* background-color: #9000ff; */
+  width: 100vw;
+  padding: 0px 100px;
+  /* flex-direction: column; */
+}
+
+@keyframes back {
+  100% {
+    background-position: 2000px 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    background-color: rgb(255, 255, 255);
+  }
+  .header nav {
+    padding: 0px 0%;
+  }
+  .menubar.active {
+    background-color: black;
+    padding: 0px 0%;
+  }
+
+  nav h1 {
+    padding-left: 20px;
+  }
+
+  /* this part is for small scren size and our service part */
+  .ourservice-left-col,
+  .ourservice-right-col {
+    flex-basis: 100%;
+  }
+  .new-ourservice-left-col,
+  .new-ourservice-right-col {
+    flex-basis: 100%;
+  }
+
+  .responsive-image {
+    display: none;
+  }
+  .responsive-image1 {
+    display: block;
+  }
+}
+
+/* mediaQurey for the mobile menu */
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(255, 255, 255);
+  }
+  .header nav {
+    padding: 0px 0%;
+  }
+  .menubar.active {
+    background-color: black;
+    padding: 0px 0%;
+  }
+
+  .navlink {
+    top: 0px;
+    position: absolute;
+    display: flex;
+    /* z-index: 100; */
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin-left: -100%;
+  }
+  .navlink.mobilemenu {
+    margin-left: -5%;
+    transition: all 0.5s ease;
+  }
+
+  nav ul li a {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+
+  .navicon {
+    display: block;
+  }
+
+  nav h1 {
+    padding-left: 20px;
+    width: 200px;
+    color: white;
+  }
+  /* .mainland{
+    background-color: #9000ff;
+    display: none;
+  } */
+  .sideimgbig {
+    display: none;
+  }
+  .slideimgsmall {
+    display: block;
+  }
+
+  #our_clints {
+    padding: 0px 20px;
+  }
+  .ourserviceheading,
+  .ourclientsheading {
+    font-size: 44px;
+  }
+}
